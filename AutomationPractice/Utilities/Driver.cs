@@ -8,27 +8,20 @@ using System.Collections.ObjectModel;
 using OpenQA.Selenium.Support.UI;
 using OpenQA.Selenium.Chrome;
 using System.Drawing;
+using OpenQA.Selenium.Interactions;
 
 namespace AutomationPractice.Utilities
 {
     class Driver : IWebDriver
     {
-        public string Url { get; set; }
-
-        public string Title => throw new NotImplementedException();
-
-        public string PageSource => throw new NotImplementedException();
-
-        public string CurrentWindowHandle => throw new NotImplementedException();
-
-        public ReadOnlyCollection<string> WindowHandles => throw new NotImplementedException();
-        
-
         private static IWebDriver driver;
         private static WebDriverWait wait;
         private static IJavaScriptExecutor jsExecutor;
+        private static Actions builder;
 
-        public Driver()
+        private static readonly Destructor Finalise = new Destructor();
+         
+        static Driver()
         {
             driver = Initialize();
         }
@@ -37,22 +30,97 @@ namespace AutomationPractice.Utilities
         {
             var driver = new ChromeDriver();
             driver.Manage().Window.Size = new Size(1024, 768);
-            driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
+            //driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(2));
             jsExecutor = driver as IJavaScriptExecutor;
             wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
-
+            builder = new Actions(driver);
 
             return driver;
         }
 
+        private sealed class Destructor
+        {
+            ~Destructor()
+            {
+                driver.Quit();
+            }
+        }
+
+        public object ExecuteScript(string script, params object[] args)
+        {
+            return jsExecutor.ExecuteScript(script, args);
+        }
+
+        public void WaitForElementPresent(By by)
+        {
+            wait.Until(ExpectedConditions.ElementIsVisible(by));
+        }
+
+
+        public void WaitForElementClickable(By by)
+        {
+            wait.Until(ExpectedConditions.ElementToBeClickable(by));
+        }
+
+        public void WaitForElementVisible(By by)
+        {
+            wait = new WebDriverWait(driver, TimeSpan.FromSeconds(2));
+            wait.Until(ExpectedConditions.ElementIsVisible(by));
+        }
+
+        public string CurrentWindowHandle
+        {
+            get
+            {
+                return driver.CurrentWindowHandle;
+            }
+        }
+
+        public string PageSource
+        {
+            get
+            {
+                return driver.PageSource;
+            }
+        }
+
+        public string Title
+        {
+            get
+            {
+                return driver.Title;
+            }
+        }
+
+        public string Url
+        {
+            get
+            {
+                return driver.Url;
+            }
+
+            set
+            {
+                driver.Url = value;
+            }
+        }
+
+        public ReadOnlyCollection<string> WindowHandles
+        {
+            get
+            {
+                return driver.WindowHandles;
+            }
+        }
+
         public void Close()
         {
-            throw new NotImplementedException();
+            driver.Close();
         }
 
         public void Dispose()
         {
-            throw new NotImplementedException();
+            driver.Dispose();
         }
 
         public IWebElement FindElement(By by)
@@ -62,12 +130,12 @@ namespace AutomationPractice.Utilities
 
         public ReadOnlyCollection<IWebElement> FindElements(By by)
         {
-            throw new NotImplementedException();
+            return driver.FindElements(by);
         }
 
         public IOptions Manage()
         {
-            throw new NotImplementedException();
+            return driver.Manage();
         }
 
         public INavigation Navigate()
@@ -82,7 +150,12 @@ namespace AutomationPractice.Utilities
 
         public ITargetLocator SwitchTo()
         {
-            throw new NotImplementedException();
+            return driver.SwitchTo();
+        }
+
+        public void HoverOnElement(IWebElement element)
+        {
+            builder.MoveToElement(element).Build().Perform();
         }
     }
 }

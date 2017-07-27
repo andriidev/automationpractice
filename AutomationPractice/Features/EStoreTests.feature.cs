@@ -92,59 +92,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 14
  testRunner.When("I type \'new user\' email", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 15
-   testRunner.And("I click \'Create an account\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-            TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Title",
-                        "First name",
-                        "Last name",
-                        "Email",
-                        "Password",
-                        "Date of Birth"});
-            table1.AddRow(new string[] {
-                        "Mr.",
-                        "John",
-                        "Doe",
-                        "",
-                        "secret123!",
-                        "07.07.1997"});
-#line 16
-   testRunner.And("I fill in \'YOUR PERSONAL INFORMATION\' area", ((string)(null)), table1, "And ");
-#line hidden
-            TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
-                        "First name",
-                        "Last name",
-                        "Company",
-                        "Address",
-                        "Address 2",
-                        "City",
-                        "State",
-                        "Zip",
-                        "Country",
-                        "Additional info",
-                        "Home phone",
-                        "Mobile phone",
-                        "alias"});
-            table2.AddRow(new string[] {
-                        "John",
-                        "Doe",
-                        "N/A",
-                        "4200 Metropolitan Ave",
-                        "N/A",
-                        "Dallas",
-                        "Texas",
-                        "TX 75210",
-                        "US",
-                        "some info",
-                        "33388555",
-                        "33388555",
-                        "Xata"});
-#line 19
-   testRunner.And("I fill in \'YOUR ADDRESS\' area", ((string)(null)), table2, "And ");
-#line 22
-   testRunner.And("I click \'Register\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 23
- testRunner.Then("I can see users credentials on \'view my account\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+   testRunner.And("I click \'Create an account\' button on authantication page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }

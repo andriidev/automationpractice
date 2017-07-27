@@ -34,5 +34,17 @@ namespace AutomationPractice.Properties {
                 this["url"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("mailinator.com")]
+        public string emailDomain {
+            get {
+                return ((string)(this["emailDomain"]));
+            }
+            set {
+                this["emailDomain"] = value;
+            }
+        }
     }
 }

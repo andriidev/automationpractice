@@ -82,13 +82,17 @@
     </Compile>
     <Compile Include="PageObjects\AuthenticationPage.cs" />
     <Compile Include="PageObjects\MainPage.cs" />
+    <Compile Include="PageObjects\RegistrationPage.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="Steps\AuthenticationSteps.cs" />
     <Compile Include="Steps\CommonSteps.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilities\DataGeneator.cs" />
+    <Compile Include="Utilities\Dictionary.cs" />
     <Compile Include="Utilities\Driver.cs" />
   </ItemGroup>
   <ItemGroup>

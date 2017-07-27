@@ -16,14 +16,18 @@ namespace AutomationPractice.Steps
     {
         private Driver driver = new Driver();
         private MainPage mainPage = new MainPage();
+        private AuthenticationPage authenticationPage = new AuthenticationPage();
+        private RegistrationPage registrationPage = new RegistrationPage();
 
         public CommonSteps()
         {
             PageFactory.InitElements(driver, mainPage);
+            PageFactory.InitElements(driver, authenticationPage);
+            PageFactory.InitElements(driver, registrationPage);
         }
 
         [Given(@"I navigate to '(.*)' page")]
-        public void GivenINavigateToPage(string pageName)
+            public void GivenINavigateToPage(string pageName)
         {
             switch (pageName.ToLower())
             {
@@ -43,6 +47,21 @@ namespace AutomationPractice.Steps
             mainPage.SignIn.Click();
         }
 
+        [Given(@"I can see '(.*)' label")]
+        public void GivenICanSeeLabel(string label)
+        {
+            switch (label.ToLower())
+            {
+                case "authentication":
+                    Assert.Equal(Dictionary.EngDictionary["Authentication"], authenticationPage.AuthenticationLabel.Text);
+                    break;
+
+                default:
+                    Assert.False(true, "Case undefined");
+                    break;
+
+            }
+        }
 
     }
 }
