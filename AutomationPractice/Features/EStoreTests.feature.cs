@@ -64,35 +64,273 @@ namespace AutomationPractice.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Add two numbers")]
-        public virtual void AddTwoNumbers()
+        [NUnit.Framework.DescriptionAttribute("TC1. User registration")]
+        [NUnit.Framework.CategoryAttribute("logout")]
+        public virtual void TC1_UserRegistration()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add two numbers", ((string[])(null)));
-#line 3
-this.ScenarioSetup(scenarioInfo);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("TC1. User registration", new string[] {
+                        "logout"});
 #line 4
+this.ScenarioSetup(scenarioInfo);
+#line 5
  testRunner.Given("I navigate to \'Home\' page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 6
+   testRunner.And("Click \'Sign in\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 7
+   testRunner.And("I can see \'Authentication\' label", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 8
+ testRunner.When("I type \'new user\' email", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 9
+   testRunner.And("I click \'Create an account\' button on authantication page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Title",
+                        "FirstName",
+                        "LastName",
+                        "Email",
+                        "Password",
+                        "DateOfBirth"});
+            table1.AddRow(new string[] {
+                        "Mr.",
+                        "John",
+                        "Doe",
+                        "",
+                        "secret123!",
+                        "7.July .1997."});
+#line 10
+   testRunner.And("I fill following fields in \'YOUR PERSONAL INFORMATION\' area", ((string)(null)), table1, "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+                        "FirstName",
+                        "LastName",
+                        "Company",
+                        "Address",
+                        "Address2",
+                        "City",
+                        "State",
+                        "Zip",
+                        "Country",
+                        "AdditionalInfo",
+                        "HomePhone",
+                        "MobilePhone",
+                        "Alias"});
+            table2.AddRow(new string[] {
+                        "John",
+                        "Doe",
+                        "N/A",
+                        "4200 Metropolitan Ave",
+                        "N/A",
+                        "Dallas",
+                        "Texas",
+                        "75210",
+                        "United States",
+                        "some info",
+                        "33388555",
+                        "33388555",
+                        "Xata"});
+#line 13
+   testRunner.And("I fill following fields in \'YOUR ADDRESS\' area", ((string)(null)), table2, "And ");
+#line 16
+   testRunner.And("I click \'Register\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 17
+ testRunner.Then("I can see users credentials on View my account button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("User registration")]
-        public virtual void UserRegistration()
+        [NUnit.Framework.DescriptionAttribute("TC2. Buy a product")]
+        public virtual void TC2_BuyAProduct()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("User registration", ((string[])(null)));
-#line 10
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("TC2. Buy a product", ((string[])(null)));
+#line 21
 this.ScenarioSetup(scenarioInfo);
-#line 11
- testRunner.Given("I navigate to \'Home\' page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 12
-   testRunner.And("Click \'Sign in\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 13
-   testRunner.And("I can see \'Authentication\' label", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 14
- testRunner.When("I type \'new user\' email", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 15
-   testRunner.And("I click \'Create an account\' button on authantication page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 22
+testRunner.Given("I navigate to \'Home\' page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 25
+  testRunner.When("I click \'Add to cart\' button on product card", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 26
+  testRunner.And("I click \'Proceed\' in confirmation pop up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("TC. Adding products to cart")]
+        [NUnit.Framework.CategoryAttribute("login")]
+        public virtual void TC_AddingProductsToCart()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("TC. Adding products to cart", new string[] {
+                        "login"});
+#line 42
+this.ScenarioSetup(scenarioInfo);
+#line 43
+testRunner.Given("I switch to Best sellers tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 44
+testRunner.When("I hower on product with discount in the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 45
+  testRunner.And("I click \'Add to cart\' button on product card", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 46
+  testRunner.And("I click \'Continue shopping\' in confirmation pop up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 47
+  testRunner.And("I hover on Cart button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 48
+testRunner.Then("I can see added product in the cart", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 49
+  testRunner.And("the price is correct according to discount", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 50
+  testRunner.And("I delete added product from cart", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 51
+testRunner.When("I search for \'Faded Short Sleeve T-shirts\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 52
+  testRunner.And("I hower on found item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 53
+  testRunner.And("I click \'Qwick view\' button on product card", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 54
+  testRunner.And("I set quantity to \'3\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 55
+  testRunner.And("I select colour to \'blue\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 56
+  testRunner.And("I select size \'L\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 57
+  testRunner.And("I click \'Add to cart\' button on quickview card", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 58
+  testRunner.And("I click \'Continue shopping\' in confirmation pop up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 59
+  testRunner.And("I hover on Cart button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 60
+testRunner.Then("I can see added product in the cart", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 61
+  testRunner.And("the price is correct according to selected quantity", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 62
+  testRunner.And("I delete added product from cart", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 63
+testRunner.When("I navigate to catalog", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 64
+  testRunner.And("I set filter parameter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 65
+  testRunner.And("I change product layout from grid to list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 66
+  testRunner.And("I hower on product in the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 67
+  testRunner.And("I click \'More\' button on product card", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 68
+  testRunner.And("I set quantity to \'2\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 69
+  testRunner.And("I select colour to \'orange\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 70
+  testRunner.And("I select size \'L\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 71
+  testRunner.And("I click \'Add to cart\' button on product detail page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 72
+  testRunner.And("I click \'Proceed to checkout\' in confirmation pop up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 73
+testRunner.Then("I can see added product in the cart", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 74
+  testRunner.And("the price is correct according to selected quantity", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("TC3. Add item to cart via catalog")]
+        public virtual void TC3_AddItemToCartViaCatalog()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("TC3. Add item to cart via catalog", ((string[])(null)));
+#line 78
+this.ScenarioSetup(scenarioInfo);
+#line 79
+testRunner.Given("I navigate to ‘home’ page as ‘anonymous’ user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 80
+testRunner.When("I click ‘ Dresses’ tab from menu bar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 81
+testRunner.And("I select price in range ‘16-40’", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 82
+testRunner.And("I select ‘L size’ from catalog", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 83
+testRunner.And("I select ‘Maxi dress properties’ from catalog", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 84
+testRunner.And("I add ‘to cart’  ‘selected’ item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 85
+testRunner.And("I click ‘proceed to checkout’ button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 86
+testRunner.And("I log out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("TC4. Checking that item adding to cart via search field.Check sorting.Check compa" +
+            "re,Check wishlist.")]
+        [NUnit.Framework.CategoryAttribute("logout")]
+        [NUnit.Framework.CategoryAttribute("login")]
+        public virtual void TC4_CheckingThatItemAddingToCartViaSearchField_CheckSorting_CheckCompareCheckWishlist_()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("TC4. Checking that item adding to cart via search field.Check sorting.Check compa" +
+                    "re,Check wishlist.", new string[] {
+                        "logout",
+                        "login"});
+#line 89
+this.ScenarioSetup(scenarioInfo);
+#line 90
+testRunner.Given("I enter ‘Dress’ to the search field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 91
+testRunner.And("I click search icon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 92
+testRunner.Then("I sort selected item by ‘Lowest price’", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 93
+testRunner.And("I see that items sorted by lowest price", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 94
+testRunner.And("I add to ‘Compare’ second and third items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 95
+testRunner.And("I add to ‘Wishlist’  fourth and fifth items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 96
+testRunner.When("I navigate to ‘compare list’", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 97
+testRunner.Then("I see two items and delete first", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 98
+testRunner.And("add ‘to cart’ ‘second’ item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 99
+testRunner.When("I navigate to ‘wishlist’", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 100
+testRunner.Then("I see  two items and delete second", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 101
+testRunner.Then("I add ‘to cart’  ‘first’ item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("TC5. Check card and payment steps")]
+        [NUnit.Framework.CategoryAttribute("login")]
+        public virtual void TC5_CheckCardAndPaymentSteps()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("TC5. Check card and payment steps", new string[] {
+                        "login"});
+#line 104
+this.ScenarioSetup(scenarioInfo);
+#line 105
+testRunner.Given("I navigate to ‘home’ page as ‘logged in’ user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 106
+testRunner.When("I navigate to ‘cart’", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 107
+testRunner.And("I see 4 items have already added to the cart", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 108
+testRunner.And("I check total  price", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 109
+testRunner.And("I delete first item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 110
+testRunner.And("I check total price again", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 111
+testRunner.And("I add one Qty of item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 112
+testRunner.And("I check total price again", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 113
+testRunner.Then("I proceed to checkout", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 114
+testRunner.When("I navigate to ‘Order history’", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 115
+testRunner.Then("I see  all information of my order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

@@ -28,7 +28,8 @@ namespace AutomationPractice.Steps
             switch (email.ToLower())
             {
                 case "new user":
-                    authenticationPage.NewEmailSendNewKeys(DataGeneator.DateTimeBasedString() + "@" + Properties.Settings.Default.emailDomain);
+                    CommonSteps.userEmail = DataGeneator.DateTimeBasedString() + "@" + Properties.Settings.Default.emailDomain;
+                    authenticationPage.NewEmailSendNewKeys(CommonSteps.userEmail);
                     break;
 
                 default:

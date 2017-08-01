@@ -10,6 +10,7 @@ namespace AutomationPractice.PageObjects
 {
     class AuthenticationPage
     {
+        //Elements
         [FindsBy(How = How.CssSelector, Using = ".page-heading")]
         public IWebElement AuthenticationLabel { get; set; }
         [FindsBy(How = How.CssSelector, Using = "#email_create")]
@@ -46,6 +47,13 @@ namespace AutomationPractice.PageObjects
         public void SignInClick()
         {
             SignInButton.Click();
+        }
+
+        public void SignIn(string email, string password)
+        {
+            EmailInputSendNewKeys(email);
+            PasswordSendNewKeys(password);
+            SignInClick();
         }
     }
 }
