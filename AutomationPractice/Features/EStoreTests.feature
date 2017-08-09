@@ -1,7 +1,8 @@
-﻿Feature: EStoreTests
+﻿Feature: EStore Sanity Check
+Test scenarios of main functionality of the application
 
 @logout
-Scenario: TC1. User registration
+Scenario: TC1. User registration and Sign in
 	Given I navigate to 'Home' page
 	  And Click 'Sign in' button
 	  And I can see 'Authentication' label
@@ -15,63 +16,54 @@ Scenario: TC1. User registration
 	  | John      | Doe      | N/A     | 4200 Metropolitan Ave | N/A      | Dallas | Texas | 75210 | United States | some info      | 33388555  | 33388555    | Xata  |
 	  And I click 'Register' button
 	Then I can see users credentials on View my account button
+	#When I Sign out
+	#Then I Sign in as new created user
 
-
-#@login
-Scenario: TC2. Buy a product
-Given I navigate to 'Home' page
-#  And I switch to Best sellers tab
-# When I hower on product with discount in the list
-  When I click 'Add to cart' button on product card
-  And I click 'Proceed' in confirmation pop up
-#  And I check Total sum in cart
-#  And I click 'Proceed to checkout' in confirmation pop up
-#  And I check Adress
-#  And I click 'Proceed to checkout' in confirmation pop up
-#  And I check shipping
-#  And I mark Terms of Service
-#  And I click 'Proceed to checkout' in confirmation pop up
-#  And I seleck payment method as 'Bank card'
-#  And I click 'Proceed to checkout' in confirmation pop up
-#  And I see 'Bank card' as selected payment method
-#  And I clcik 'Confirmation' button
-#Then I can see confirmation message 'Your order on My Store is complete.'
 
 
 @login
-Scenario: TC. Adding products to cart
-Given I switch to Best sellers tab
-When I hower on product with discount in the list
-  And I click 'Add to cart' button on product card
-  And I click 'Continue shopping' in confirmation pop up
-  And I hover on Cart button
-Then I can see added product in the cart
-  And the price is correct according to discount
-  And I delete added product from cart
-When I search for 'Faded Short Sleeve T-shirts' item
-  And I hower on found item
+Scenario: TC2. Buy one product added from main page by bank card
+Given I navigate to 'Home' page
+  When I click 'Add to cart' button on product card
+  And I click 'Proceed' in confirmation pop up
+#  And I check Total sum in cart
+  And I click 'Proceed to checkout' button on Shopping Cart page
+#  And I check Adress
+  And I click 'Proceed on Address step' button on Shopping Cart page
+#  And I check shipping
+	And I mark Terms of Service
+  And I click 'Proceed on Shipping step' button on Shopping Cart page
+  And I seleck payment method as 'Bank card'
+  And I see 'Bank card' as selected payment method
+  And I click 'Confirmation' button on Shopping Cart page
+Then I can see order confirmation message
+
+
+Scenario: TC3. Product search, sorting, adding products to cart
+Given I navigate to 'Home' page
+When I search for 'T-short' item
+  And Sort 'ascending' by price 'Price: Lowest first'
+  And Sort 'descending' by price 'Price: Highest first'
   And I click 'Qwick view' button on product card
-  And I set quantity to '3'
-  And I select colour to 'blue'
-  And I select size 'L'
+  And I set quantity to '3' colour to '1' select size 'L'
   And I click 'Add to cart' button on quickview card
   And I click 'Continue shopping' in confirmation pop up
   And I hover on Cart button
-Then I can see added product in the cart
-  And the price is correct according to selected quantity
-  And I delete added product from cart
-When I navigate to catalog
-  And I set filter parameter
-  And I change product layout from grid to list
-  And I hower on product in the list
-  And I click 'More' button on product card
-  And I set quantity to '2'
-  And I select colour to 'orange'
-  And I select size 'L'
-  And I click 'Add to cart' button on product detail page
-  And I click 'Proceed to checkout' in confirmation pop up
-Then I can see added product in the cart
-  And the price is correct according to selected quantity
+#Then I can see added product in the cart
+#  And the price is correct according to selected quantity
+#  And I delete added product from cart
+#When I navigate to catalog
+#  And I set filter parameter
+#  And I change product layout from grid to list
+#  And I hower on product in the list
+#  And I click 'More' button on product card
+#  And I set quantity to '2'
+#  And I select colour to 'orange'
+#  And I select size 'L'
+#  And I click 'Add to cart' button on product detail page
+#  And I click 'Proceed to checkout' in confirmation pop up
+#Then I can see added product in the cart
+#  And the price is correct according to selected quantity
 
 
 

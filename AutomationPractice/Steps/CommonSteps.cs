@@ -116,11 +116,35 @@ namespace AutomationPractice.Steps
                 case "add to cart":
                     mainPage.AddToCartBtn.Click();
                     break;
+                case "qwick view":
+                    mainPage.QuickViewBtnsList[0].Click();
+                    break;
 
                 default:
                     Assert.False(true, "Case undefined");
                     break;
             }
         }
+
+        [When(@"I search for '(.*)' item")]
+        public void WhenISearchForItem(string searchValue)
+        {
+            mainPage.SearchByText(searchValue);
+        }
+
+        [When(@"Sort '(.*)' by price '(.*)'")]
+        public void WhenSortByPrice(string sortDirection, string sortBy)
+        {
+            mainPage.SortGridBy(sortBy);
+            mainPage.VerifySortingInGrid(sortDirection);
+        }
+
+        [When(@"I hover on Cart button")]
+        public void WhenIHoverOnCartButton()
+        {
+            driver.HoverOnElement(mainPage.CartDD);
+        }
+
+
     }
 }

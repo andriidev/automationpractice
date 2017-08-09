@@ -13,7 +13,11 @@ namespace AutomationPractice.Utilities
             //Authentification
             {"Authentication", "AUTHENTICATION"},
             //Registration
-            { "", ""},
+
+            //Shopping Cart
+            {"Bank card", "BANK-WIRE PAYMENT."},
+            {"ckeck", "Check payment"},
+            {"Order confirmation", "Your order on My Store is complete."}
         };
     }
 }

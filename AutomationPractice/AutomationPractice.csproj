@@ -85,6 +85,7 @@
     <Compile Include="PageObjects\AddProductPopUpPage.cs" />
     <Compile Include="PageObjects\AuthenticationPage.cs" />
     <Compile Include="PageObjects\MainPage.cs" />
+    <Compile Include="PageObjects\QuickViewPopUpPage.cs" />
     <Compile Include="PageObjects\RegistrationPage.cs" />
     <Compile Include="PageObjects\ShoppingCartPage.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
@@ -92,7 +93,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="Steps\AddProductPopUpSteps.cs" />
+    <Compile Include="Steps\AddProductSteps.cs" />
     <Compile Include="Steps\AuthenticationSteps.cs" />
     <Compile Include="Steps\CommonSteps.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

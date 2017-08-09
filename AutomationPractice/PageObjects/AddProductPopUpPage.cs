@@ -13,7 +13,7 @@ namespace AutomationPractice.PageObjects
         //Elements
         [FindsBy(How = How.CssSelector, Using = "div.button-container > a > span")]
         public IWebElement ProceedToCheckoutBtn { get; set; }
-        [FindsBy(How = How.CssSelector, Using = ".btn.btn-default.button.button-medium>span")]
+        [FindsBy(How = How.CssSelector, Using = ".continue.btn.btn-default.button.exclusive-medium>span")]
         public IWebElement ContinueShoppingBtn { get; set; }
     }
 
