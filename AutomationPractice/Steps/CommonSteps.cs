@@ -145,6 +145,12 @@ namespace AutomationPractice.Steps
             driver.HoverOnElement(mainPage.CartDD);
         }
 
+        [When(@"I click ckeckout in cart drop down")]
+        public void WhenIClickCkeckoutInCartDropDown()
+        {
+            driver.WaitForElementVisible(By.CssSelector("#button_order_cart>span"));
+            mainPage.CartCheckoutClick();
+        }
 
     }
 }

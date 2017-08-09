@@ -49,6 +49,7 @@ When I search for 'T-short' item
   And I click 'Add to cart' button on quickview card
   And I click 'Continue shopping' in confirmation pop up
   And I hover on Cart button
+  And I click ckeckout in cart drop down
 #Then I can see added product in the cart
 #  And the price is correct according to selected quantity
 #  And I delete added product from cart

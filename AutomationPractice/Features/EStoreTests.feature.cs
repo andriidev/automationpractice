@@ -198,6 +198,12 @@ testRunner.When("I search for \'T-short\' item", ((string)(null)), ((TechTalk.Sp
   testRunner.And("I click \'Continue shopping\' in confirmation pop up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 51
   testRunner.And("I hover on Cart button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 52
+  testRunner.And("I click ckeckout in cart drop down", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 53
+  testRunner.And("I complete chekout", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 54
+testRunner.Then("I can see order confirmation message", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -207,23 +213,23 @@ testRunner.When("I search for \'T-short\' item", ((string)(null)), ((TechTalk.Sp
         public virtual void TC3_AddItemToCartViaCatalog()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("TC3. Add item to cart via catalog", ((string[])(null)));
-#line 70
-this.ScenarioSetup(scenarioInfo);
-#line 71
-testRunner.Given("I navigate to ‘home’ page as ‘anonymous’ user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 72
-testRunner.When("I click ‘ Dresses’ tab from menu bar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 73
-testRunner.And("I select price in range ‘16-40’", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 74
-testRunner.And("I select ‘L size’ from catalog", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+this.ScenarioSetup(scenarioInfo);
 #line 75
-testRunner.And("I select ‘Maxi dress properties’ from catalog", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.Given("I navigate to ‘home’ page as ‘anonymous’ user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 76
-testRunner.And("I add ‘to cart’  ‘selected’ item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.When("I click ‘ Dresses’ tab from menu bar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 77
-testRunner.And("I click ‘proceed to checkout’ button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("I select price in range ‘16-40’", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 78
+testRunner.And("I select ‘L size’ from catalog", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 79
+testRunner.And("I select ‘Maxi dress properties’ from catalog", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 80
+testRunner.And("I add ‘to cart’  ‘selected’ item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 81
+testRunner.And("I click ‘proceed to checkout’ button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 82
 testRunner.And("I log out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -240,31 +246,31 @@ testRunner.And("I log out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)),
                     "re,Check wishlist.", new string[] {
                         "logout",
                         "login"});
-#line 81
-this.ScenarioSetup(scenarioInfo);
-#line 82
-testRunner.Given("I enter ‘Dress’ to the search field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 83
-testRunner.And("I click search icon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 84
-testRunner.Then("I sort selected item by ‘Lowest price’", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 85
-testRunner.And("I see that items sorted by lowest price", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+this.ScenarioSetup(scenarioInfo);
 #line 86
-testRunner.And("I add to ‘Compare’ second and third items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.Given("I enter ‘Dress’ to the search field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 87
-testRunner.And("I add to ‘Wishlist’  fourth and fifth items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("I click search icon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 88
-testRunner.When("I navigate to ‘compare list’", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.Then("I sort selected item by ‘Lowest price’", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 89
-testRunner.Then("I see two items and delete first", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.And("I see that items sorted by lowest price", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 90
-testRunner.And("add ‘to cart’ ‘second’ item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("I add to ‘Compare’ second and third items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 91
-testRunner.When("I navigate to ‘wishlist’", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.And("I add to ‘Wishlist’  fourth and fifth items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 92
-testRunner.Then("I see  two items and delete second", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.When("I navigate to ‘compare list’", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 93
+testRunner.Then("I see two items and delete first", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 94
+testRunner.And("add ‘to cart’ ‘second’ item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 95
+testRunner.When("I navigate to ‘wishlist’", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 96
+testRunner.Then("I see  two items and delete second", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 97
 testRunner.Then("I add ‘to cart’  ‘first’ item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -277,29 +283,29 @@ testRunner.Then("I add ‘to cart’  ‘first’ item", ((string)(null)), ((Tec
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("TC5. Check card and payment steps", new string[] {
                         "login"});
-#line 96
-this.ScenarioSetup(scenarioInfo);
-#line 97
-testRunner.Given("I navigate to ‘home’ page as ‘logged in’ user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 98
-testRunner.When("I navigate to ‘cart’", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 99
-testRunner.And("I see 4 items have already added to the cart", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 100
-testRunner.And("I check total  price", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+this.ScenarioSetup(scenarioInfo);
 #line 101
-testRunner.And("I delete first item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.Given("I navigate to ‘home’ page as ‘logged in’ user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 102
-testRunner.And("I check total price again", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.When("I navigate to ‘cart’", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 103
-testRunner.And("I add one Qty of item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("I see 4 items have already added to the cart", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 104
-testRunner.And("I check total price again", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("I check total  price", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 105
-testRunner.Then("I proceed to checkout", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.And("I delete first item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 106
-testRunner.When("I navigate to ‘Order history’", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.And("I check total price again", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 107
+testRunner.And("I add one Qty of item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 108
+testRunner.And("I check total price again", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 109
+testRunner.Then("I proceed to checkout", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 110
+testRunner.When("I navigate to ‘Order history’", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 111
 testRunner.Then("I see  all information of my order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

@@ -115,5 +115,10 @@ namespace AutomationPractice.PageObjects
         {
             QuickViewBtnsList[productNumber].Click();
         }
+
+        public void CartCheckoutClick()
+        {
+            CartCheckout.Click();
+        }
     }
 }
